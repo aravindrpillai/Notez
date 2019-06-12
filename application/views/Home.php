@@ -7,7 +7,6 @@
     <title>Notez</title>
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/bootstrap.min.css'); ?>" >
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/custom.css'); ?>" >
-    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.css" rel="stylesheet">
 </head>
 
 <body>
@@ -32,58 +31,37 @@
     </nav>
 
 <div class="container-fluid">
-        <div class="col-sm-10">
-            <div class="alert alert-success alert-dismissible" role="alert">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <strong>Synergize:</strong> Seamlessly visualize quality intellectual capital!
-            </div>      
-        
-            <div class="row">
-                <article class="col-xs-12" id="text_content">
-                    <div style="width:80%!important" id="summernote"></div>
-                </article>
-            </div>
-        </div>
+       
+  <div class="col-sm-6">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title"><span class="glyphicon glyphicon-user"></span> My Notes </h3>
+			<input type="text"> 
+		</div>
+		<div class="panel-body">
+			<table class="table table-hover table-responsive">
+				<tr><td>1.</td><td>App Dynamics Setup</td></tr>
+				<tr><td>2.</td><td>Guidewire Integ Tutorial</td></tr>
+				<tr><td>3.</td><td>Common Law</td></tr>
+			</table>
+		</div>
+	</div>
+  </div>
+   
+  <div class="col-sm-6">
+	<div class="panel panel-default">
+		<div class="panel-heading"><h3 class="panel-title"><span class="glyphicon glyphicon-user"></span> People Associated </h3></div>
+		<div class="panel-body">
+			<table class="table table-hover table-responsive">
+				<tr><td>1.</td><td>Aravind R Pillai</td></tr>
+				<tr><td>2.</td><td>Sukanya Vijayan</td></tr>
+				<tr><td>3.</td><td>Chithra R</td></tr>
+			</table>
+		</div>
+	</div>
+  </div>
 
-
-      <div class="col-sm-2">
-            <div class="panel panel-default" style="height:400px">
-                <div class="panel-heading">
-                    <h3 class="panel-title">
-                        <span class="glyphicon glyphicon-envelope"></span> 
-                        Discussions
-                    </h3>
-                </div>
-                <div class="panel-body">
-                <table>
-                    <tr>
-                    <td><input type="text" class="form-control" id="message_bo" placeholder="Enter your message"></td>
-                    <td><button class="btn btn-info"><span class="glyphicon glyphicon-send"></span></button></td>
-                    </tr>
-                </table>
-                
-                        
-                    
-                </div>
-            </div>
-
-            <div class="panel panel-default">
-                <div class="panel-heading"><h3 class="panel-title"><span class="glyphicon glyphicon-user"></span> Members</h3></div>
-                <div class="panel-body">
-                    <table>
-                        <tr><td><span class="glyphicon glyphicon-record"></span>&nbsp;&nbsp;</td><td>Aravind R Pillai</td></tr>
-                        <tr><td><span class="glyphicon glyphicon-record"></span>&nbsp;&nbsp;</td><td>Jithesh Mavila</td></tr>
-                        <tr><td><span class="glyphicon glyphicon-record"></span>&nbsp;&nbsp;</td><td>Shine Kannkath</td></tr>
-                        <tr><td><span class="glyphicon glyphicon-record"></span>&nbsp;&nbsp;</td><td>Kumaran Kanniyappan</td></tr>
-                        <tr><td><span class="glyphicon glyphicon-record"></span>&nbsp;&nbsp;</td><td>Irine Varadaraj</td></tr>
-                        <tr><td><span class="glyphicon glyphicon-record"></span>&nbsp;&nbsp;</td><td>Darshan</td></tr>
-                    </table>
-                </div>
-            </div>
-
-      </div>
-
-    </div>
+</div>
     
 	
 <footer style="position:fixed; 	bottom:0; width:100%">
@@ -99,31 +77,6 @@
 	<script src="<?php echo base_url('assets/js/bootstrap.min.js') ?>"></script>
 	<script src="<?php echo base_url('assets/js/ie10-viewport-bug-workaround.js') ?>"></script>
 	<script src="<?php echo base_url('assets/js/holder.min.js') ?>"></script>
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.js"></script>
-    
-    <script type="text/javascript">
-        $(document).ready(function() {
-          $('#summernote').summernote({
-            height: 570,
-            minHeight: 400,
-            maxHeight: 600,
-            focus: true,
-            callbacks: {
-              onChange: function (contents, $editable) {
-               var code = $(this).summernote("code");
-                    //alert(code);
-              }
-            }
-          })
-        });
-    </script>
-    
-    <style>
-        .note_name_field{
-            background-color: transparent;
-            color:white;
-        }
-    </style>
 </body>
 
 </html>

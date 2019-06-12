@@ -26,18 +26,22 @@
 </div>
 </nav>
 
-<div class="container-fluid" style="margin-top:4%; height: 100%; display: flex; justify-content: center; align-items: center;">
-	  
-	  
+<div class="container-fluid" style="margin-top:2%; height: 100%; display: flex; justify-content: center; align-items: center;">
 	  <div class="col-sm-4">
 		<div class="row"><?php require_once("common/flash_message.php") ?></div>	
-		<div class="panel panel-default" style="height:300px">
+		<div class="panel panel-default" style="height:330px">
 			<div class="panel-heading">
-				<h3 class="panel-title"><span class="glyphicon glyphicon-lock"></span> Login</h3>
+				<h3 class="panel-title"><span class="glyphicon glyphicon-lock"></span> User Registration</h3>
 			</div>
 			<div class="panel-body">
-				<form action="<?php echo base_url("Login/Authenticate") ?>" method="POST">
-				
+				<form action="<?php echo base_url("SignUp/Register") ?>" method="POST">
+				<div style="margin-top:10px">
+					<label>Full Name</label>
+					<?php 
+					$name = array('name'=>'name','value'=>set_value('name',@$name), 'class'=>'form-control','placeholder' => 'John Honai');
+					echo form_input($name); 
+					?>
+				</div>
 				<div style="margin-top:10px">
 					<label>Email ID</label>
 					<?php 
@@ -54,8 +58,8 @@
 				</div>
 				
 				<div style="margin-top:15px">
-					<button onClick="signUp()" type="button" class="btn btn-success pull-left"><span class="glyphicon glyphicon-plus"></span> Sign Up</button>
-					<button name="submit_button" value="login" class="btn btn-info pull-right"><span class="glyphicon glyphicon-log-in"></span> Login</button>
+					<button onClick="login()" type="button" class="btn btn-success pull-left"><span class="glyphicon glyphicon-log-in"></span> Return</button>
+					<button name="submit_button" value="login" class="btn btn-info pull-right"><span class="glyphicon glyphicon-save"></span> Register</button>
 					<button type="reset" class="btn btn-warning pull-right"><span class="glyphicon glyphicon-repeat"></span> Reset</button>
 				</div>
 				</form>
@@ -66,7 +70,6 @@
 				
 </div>
 
-
 <footer style="position:fixed; 	bottom:0; width:100%">
 	<div class="footer-blurb">
 		<div style="padding-left:20px; padding-right:20px; ">
@@ -75,7 +78,6 @@
 		</div>
 	</div>
 </footer>
-
 </body>
 </html>
 
@@ -84,8 +86,8 @@
 	<script src="<?php echo base_url('assets/js/ie10-viewport-bug-workaround.js') ?>"></script>
 	<script src="<?php echo base_url('assets/js/holder.min.js') ?>"></script>
 	<script>
-		function signUp(){
-			window.location.replace("<?php echo base_url("Signup") ?>");
+		function login(){
+			window.location.replace("<?php echo base_url("Login") ?>");
 		}
 	</script>
 	

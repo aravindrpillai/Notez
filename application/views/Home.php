@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Notez</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css" >
-    <link rel="stylesheet" href="css/custom.css" >
+	<link rel="stylesheet" href="<?php echo base_url('assets/css/bootstrap.min.css'); ?>" >
+	<link rel="stylesheet" href="<?php echo base_url('assets/css/custom.css'); ?>" >
     <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.css" rel="stylesheet">
 </head>
 
@@ -15,8 +15,8 @@
         <div class="container" style="width:100%!important">
             <div  style="cursor:pointer" class="navbar-header pull-left">
                 <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-edit"></span> Notez </a><a class="navbar-brand">|</a>
-                <a class="navbar-brand"><span class="glyphicon glyphicon-user"></span> Aravind R Pillai</a><a class="navbar-brand">|</a>
-                <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a> 
+                <a class="navbar-brand"><span class="glyphicon glyphicon-user"></span> <?php echo @$this->session->userdata('name');?></a><a class="navbar-brand">|</a>
+                <a class="navbar-brand" href="<?php echo base_url('Login/Logout')?>"><span class="glyphicon glyphicon-log-out"></span> Logout</a> 
             </div>
             
             <div class="collapse navbar-collapse pull-right" id="navbar"  style="width:50%!important">
@@ -85,25 +85,21 @@
 
     </div>
     
-    <footer style="position:fixed; bottom:0; width:100%">
-        <div class="footer-blurb">
-            <div class="container">
-                <div class="row">
-                <center>
-                    <p>Development Credits : Aravind R Pillai</p>
-                    <p>Copyright &copy; Wokidz.com 2015 </p>
-                </center>
-                </div>
-            </div>
-        </div>
-    </footer>
-
+	
+<footer style="position:fixed; 	bottom:0; width:100%">
+	<div class="footer-blurb">
+		<div style="padding-left:20px; padding-right:20px; ">
+				<p class="pull-right">Development Credits : Aravind R Pillai</p>
+				<p class="pull-left">Copyright &copy; Wokidz.com 2019 </p>
+		</div>
+	</div>
+</footer>
     
-    <script src="js/jquery-1.11.3.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/ie10-viewport-bug-workaround.js"></script>
-    <script src="js/holder.min.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.js"></script>
+    <script src="<?php echo base_url('assets/js/jquery-1.11.3.min.js') ?>"></script>
+	<script src="<?php echo base_url('assets/js/bootstrap.min.js') ?>"></script>
+	<script src="<?php echo base_url('assets/js/ie10-viewport-bug-workaround.js') ?>"></script>
+	<script src="<?php echo base_url('assets/js/holder.min.js') ?>"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.js"></script>
     
     <script type="text/javascript">
         $(document).ready(function() {

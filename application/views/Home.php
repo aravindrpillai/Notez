@@ -15,7 +15,8 @@
             <div  style="cursor:pointer" class="navbar-header pull-left">
                 <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-edit"></span> Notez </a><a class="navbar-brand">|</a>
                 <a class="navbar-brand"><span class="glyphicon glyphicon-user"></span> <?php echo @$this->session->userdata('name');?></a><a class="navbar-brand">|</a>
-                <a class="navbar-brand" href="<?php echo base_url('Login/Logout')?>"><span class="glyphicon glyphicon-log-out"></span> Logout</a> 
+                <a class="navbar-brand" href="<?php echo base_url('Login/Logout')?>"><span class="glyphicon glyphicon-log-out"></span> Logout</a> <a class="navbar-brand">|</a>
+                <a class="navbar-brand" href="<?php echo base_url('Note/NewNote')?>"><span class="glyphicon glyphicon-plus"></span> New Note</a> 
             </div>
             
             <div class="collapse navbar-collapse pull-right" id="navbar"  style="width:50%!important">
@@ -32,11 +33,12 @@
 
 <div class="container-fluid">
        
+  <div class="row"><center><div style="width:97%"><?php require_once("common/flash_message.php") ?></div></center></div>	
+  
   <div class="col-sm-6">
 	<div class="panel panel-default">
 		<div class="panel-heading">
-			<h3 class="panel-title"><span class="glyphicon glyphicon-user"></span> My Notes </h3>
-			<input type="text"> 
+			<h3 class="panel-title" ><span class="glyphicon glyphicon-user"></span> My Notes </h3>
 		</div>
 		<div class="panel-body">
 			<table class="table table-hover table-responsive">
@@ -53,9 +55,10 @@
 		<div class="panel-heading"><h3 class="panel-title"><span class="glyphicon glyphicon-user"></span> People Associated </h3></div>
 		<div class="panel-body">
 			<table class="table table-hover table-responsive">
-				<tr><td>1.</td><td>Aravind R Pillai</td></tr>
-				<tr><td>2.</td><td>Sukanya Vijayan</td></tr>
-				<tr><td>3.</td><td>Chithra R</td></tr>
+				<tr><td>1.</td><td>Aravind R Pillai</td><td><button class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button></td><td><button class="btn btn-success">Read & Write</button></td></tr>
+				<tr><td>2.</td><td>Sukanya Vijayan</td><td><button class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button></td><td><button class="btn btn-warning">Read Only</button></td></tr>
+				<tr><td>3.</td><td>Chithra R</td><td><button class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button></td><td><button class="btn btn-success">Read & Write</button></td></tr>
+				<tr><td>#</td><td><input type="text" class="form-control"></td><td><button class="btn btn-success"><span class="glyphicon glyphicon-plus"></span></button></td><td></td></tr>
 			</table>
 		</div>
 	</div>

@@ -38,11 +38,6 @@
 	<div class="row"><center><div style="width:97%"><?php require_once("common/flash_message.php") ?></div></center></div>
     
     <div class="col-sm-10">
-		<div class="alert alert-success alert-dismissible" role="alert">
-			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			<strong>Synergize:</strong> Seamlessly visualize quality intellectual capital!
-		</div>      
-	
 		<div class="row">
 			<article class="col-xs-12" id="text_content">
 				<div style="width:80%!important" id="summernote"></div>
@@ -123,8 +118,21 @@
         });
 		
 		function updateNoteName(noteid){
-			var noteName = $("#note_name").val();
-			alert(noteid+" - "+noteName);
+			$.ajax({
+				url:"<?php echo base_url("Note/UpdateNoteName") ?>",
+				type:"POST",
+				data:{
+					"note_id":noteid,
+					"note_name":$("#note_name").val()
+				},success:function(data){
+					if(data != true){
+						alert(data);
+					}
+				},error:function(data){
+					alert("Error : "+data.responseText);
+				}
+				
+			});
 			
 		}
     </script>

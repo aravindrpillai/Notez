@@ -25,6 +25,12 @@ class NoteModel extends CI_Model{
 		return $return;
 	}
 
+    function updateNoteName($note_id, $note_name){
+		$this->db->where('note_id', $note_id);
+		$this->db->update('notes', array("note_name"=>$note_name));
+		return ($this->db->affected_rows() == 1);
+	}
+
 }
 
 ?>

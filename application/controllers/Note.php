@@ -32,5 +32,22 @@ class Note extends CI_Controller {
 			redirect("Home");
 		}
 	}
+	
+	
+	public function updateNoteName(){
+		$noteId = $_POST["note_id"];
+		$newName = $_POST["note_name"];
+		if($newName == ""){
+			echo "Note Name Cannot Be Empty";
+		} else {
+			if($this->NoteModel->updateNoteName($noteId,$newName)){
+				echo true;
+			}else{
+				echo "Failed to update Note Name";
+			}
+		}
+	}
+	
+	
 
 }
